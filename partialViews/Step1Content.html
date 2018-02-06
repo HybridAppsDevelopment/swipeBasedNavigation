@@ -1,0 +1,265 @@
+<!--Step 1 Screen-->
+
+<style>
+
+.swiper-container {
+    margin-top: 00px;
+}
+
+</style>
+
+
+
+<div data-hash="screen0" class="screen0 swiper-slide">
+
+    <!--main content section-->
+    <div class="section">
+
+        <!--content area-->
+
+        <!--row 1 -->
+
+
+
+
+        <!--content-->
+
+        <div class="row">
+
+
+            <!--card right indicator and control-->
+            <div class="col s2left">
+
+                <div class="card cardBgColor2">
+
+                    <i class="material-icons">&#xE837</i>
+                    <h4>Start</h4>
+
+                </div>
+
+            </div>
+            <!--end card right controller-->
+
+
+
+            <div class="col m12 leftcol">
+
+
+                <div class="contentTextflowBox5">
+
+                    <div class="cardLogoSmall"></div>
+
+
+                    <h5>What is Alex?</h5>
+
+                    <div class="col c2"></div>
+
+                    <article class="col c8">
+
+                        <!--custom video player style-->
+                        <video poster="img/poster.png" id="videoPlayer" class="shoutOutVideoPlayer videoPlayerCurve" playsinline controls preload="metadata">
+
+                        <source id="videoSource" src="https://player.vimeo.com/external/205385565.hd.mp4?s=a86f04e537da0ddc6393346ac6fd55a77a8d43d5&profile_id=174" type="video/mp4" style="background-color:#ccff55;" />
+
+
+
+                        </video>
+
+
+                        <!--end video container-->
+                        <div class="shoutOutVideoPlayerBottom">
+                            <span class="videoTextBottom"><a class="AlexFilmText1 inContentLink AlexFilmText" target="_blank" href="groupContent/videoScript/Step1.pdf" alt="read transcript"><i class="material-icons">&#xE2C4;</i><div>Video Script</div></a></span>                        </div>
+
+                        <!--end customer video player-->
+
+                        <!--textLayoutMaster start-->
+
+
+                          <div class="textLayoutMasterHorz removeTopBorder col c12">
+
+                          <p class="flow-text contentText firstPara left-align">Alex is an essay writing tool with ten easy steps that’ll get you from blank page to the final draft. </p>
+
+                          <p class="flow-text contentText left-align">Here are the materials you’ll need to create your structure map: </p>
+
+
+                          <ul class="flow-text-ul lastUl">
+                              <li>4 - 6 highlighter pens and some sticky notes in the same colours. </li>
+                              <br>
+                              <li>A large sheet of paper (I use a roll of brown paper) to draw your map on.</li>
+                              <br>
+                              <li>A magazine folder to store loose sheets – an old cereal packet will do!</li>
+                          </ul>
+
+
+                        </div>
+
+
+
+                    </article>
+
+
+                    <div class="col c2"></div>
+
+
+
+
+
+
+
+
+
+                </div>
+
+                <span class="contentTextFooter">
+
+<span><a _to="screen1" class="_gloss left"><div>Glossary of Key Terms</div></a></span>
+
+                </span>
+            </div>
+            <!--close col-->
+
+
+            <!--card right indicator and control-->
+            <div class="col s2right">
+              <a class="mainMenu">
+                <div class="card cardBgColor2">
+                    <div class="">
+                        <i class="material-icons">&#xE047;</i>
+                        <h4>End</h4>
+                    </div>
+                </div>
+              </a>
+            </div>
+            <!--end card right controller-->
+
+
+
+
+        </div>
+        <!--close row-->
+
+
+
+    </div>
+    <!--close section-->
+
+    <!--close step -->
+</div>
+
+
+<script>
+
+    injectVideo(currentStep);
+
+    //content adapter version 2
+    //destroy previous instance ready to create a new instance
+    //swiper.destroy(true, true);
+    //Need to put the Swiper into the dynamicaly generated content!
+    //initialize swiper SPA control for this content
+    var swiper = new Swiper('.swiper-container', {
+        // If we need pagination
+        pagination: '.swiper-pagination',
+        paginationClickable: true,
+        //hashnav: true,
+        /*pagination: '.swiper-pagination',
+        paginationClickable: true,
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev',
+        autoHeight:true,*/
+        spaceBetween: 0,
+
+
+        //Need to change next and back col heights to match content height
+
+
+        onInit: function(swiper) {
+
+            thisScreen = swiper.activeIndex;
+
+            var startScreen = $(".screen" + thisScreen).attr("data-hash");
+
+            setTimeout(function() {
+                    var bodyH = $(".swiper-slide-active div.m12").height();
+                    $(".s2left .card").height(bodyH - 55);
+                    $(".s2right .card").height(bodyH - 55);
+                    $(".swiper-wrapper").height(bodyH + 220);
+
+                },
+                100);
+
+
+
+
+            setUserHistory(thisScreen, currentStep);
+
+            detectScreenRes("true");
+            //injectVideo(currentStep);
+
+        },
+
+        // Add one more handler for this event
+        onSlideChangeEnd: function(swiper) {
+
+            thisScreen = swiper.activeIndex;
+            var startScreen = $(".screen" + thisScreen).attr("data-hash");
+            var bodyH = $(".swiper-slide-active div.m12").height();
+            $(".s2left .card").height(bodyH - 55);
+            $(".s2right .card").height(bodyH - 55);
+            $(".swiper-wrapper").height(bodyH + 220);
+
+            setUserHistory(thisScreen, currentStep);
+
+        },
+
+        paginationBulletRender: function(swiper, index, className) {
+            return '<span class="' + className + '"></span>';
+        }
+    });
+
+    /*new resizer method updated 23/6/17*/
+    function resizer() {
+
+        thisScreen = swiper.activeIndex;
+
+        var startScreen = $(".screen" + thisScreen).attr("data-hash");
+
+        detectScreenRes("true");
+
+        var bodyH = $(".swiper-slide-active .leftcol").height();
+        $(".s2left .card").height(bodyH - 55);
+        $(".s2right .card").height(bodyH - 55);
+        $(".swiper-wrapper").height(bodyH +155);
+        //recalculate footer height to make snug fit
+        $( ".contentTextFooter" ).css( "margin-top", "2px" );
+
+        setUserHistory(thisScreen, currentStep);
+
+
+
+    }//close resizer
+
+    function startResize() {
+        $(window).resize(resizer);
+    }
+
+    function endResize() {
+        $(window).off("resize", resizer);
+    }
+
+    startResize();
+
+
+    //check that the video metadata has loaded then recalculate the height and width of nav background-size
+    //This is useful on slow connections where the video metadata may take a few seconds to arrive
+    // Get the <video> element with id="myVideo
+    $("#videoPlayer").bind("loadedmetadata", function () {
+            var width = this.videoWidth;
+            var height = this.videoHeight;
+            var bodyH = $(".swiper-slide-active .leftcol").height();
+            $(".s2left .card").height(bodyH - 55);
+            $(".s2right .card").height(bodyH - 55);
+            $(".swiper-wrapper").height(bodyH +155);
+            //recalculate footer height to make snug fit
+            $( ".contentTextFooter" ).css( "margin-top", "2px" );
+        });
+</script>

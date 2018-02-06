@@ -1,0 +1,292 @@
+<div data-hash="home" class="type-home swiper-slide">
+
+
+    <!--main content section-->
+    <div class="section">
+
+
+        <div class="row center">
+
+
+            <!--card 1-->
+            <div class="col s12 m4">
+
+                <div class="card cardBgColor2">
+
+                    <div class="card-content">
+                      <a class=" waves-effect waves-light" tabindex="2">
+                          <div class="card2 cardLogo click-to-toggle">
+
+
+                      </a>
+
+
+                        </div>
+
+
+
+
+                        <h5 class="truncate">TMP 1</h5>
+
+
+
+                    </div>
+
+
+
+                </div>
+
+
+
+
+            </div>
+            <!--end card-->
+
+
+
+
+
+
+
+            <!--card 2-->
+            <div class="col s12 m4">
+
+                <div class="card cardBgColor2">
+
+                    <div class="card-content">
+
+                        <a class=" waves-effect waves-light" tabindex="2">
+                            <div class="card2 cardLogo click-to-toggle">
+
+
+                        </a>
+
+                        </div>
+
+
+
+                        <h5 class="truncate">TMP 2</h5>
+                    </div>
+
+
+
+                </div>
+
+            </div>
+            <!--end card-->
+
+
+
+
+
+
+            <!--card 3-->
+            <div class="col s12 m4">
+
+                <div class="card cardBgColor2">
+
+                    <div class="card-content">
+
+                        <a class="waves-effect waves-light" tabindex="3">
+                            <div class="card3 cardLogo click-to-toggle">
+
+                        </a>
+
+                        </div>
+
+
+
+                        <h5 class="truncate">TMP 3</h5>
+                    </div>
+
+                </div>
+
+            </div>
+            <!--end card-->
+
+
+
+        </div>
+        <!--close row-->
+
+
+
+
+    </div>
+    <!--close section-->
+
+</div>
+<!--Close Steps Menu Group 1-->
+
+
+
+<div data-hash="home" class="type-home swiper-slide">
+
+
+    <!--main content section-->
+    <div class="section">
+
+
+        <div class="row center">
+
+
+            <!--card 1-->
+            <div class="col s12 m4">
+
+                <div class="card cardBgColor2">
+
+                    <div class="card-content">
+                      <a class=" waves-effect waves-light" tabindex="2">
+                          <div class="card2 cardLogo click-to-toggle">
+
+
+                      </a>
+
+
+                        </div>
+
+
+
+
+                        <h5 class="truncate">TMP 4</h5>
+
+
+
+                    </div>
+
+
+
+                </div>
+
+
+
+
+            </div>
+            <!--end card-->
+
+
+
+
+
+
+
+            <!--card 2-->
+            <div class="col s12 m4">
+
+                <div class="card cardBgColor2">
+
+                    <div class="card-content">
+
+                        <a class=" waves-effect waves-light" tabindex="2">
+                            <div class="card2 cardLogo click-to-toggle">
+
+
+                        </a>
+
+                        </div>
+
+
+
+                        <h5 class="truncate">TMP 5</h5>
+                    </div>
+
+
+
+                </div>
+
+            </div>
+            <!--end card-->
+
+
+
+
+
+
+            <!--card 3-->
+            <div class="col s12 m4">
+
+                <div class="card cardBgColor2">
+
+                    <div class="card-content">
+
+                        <a class="waves-effect waves-light" tabindex="3">
+                            <div class="card3 cardLogo click-to-toggle">
+
+                        </a>
+
+                        </div>
+
+
+
+                        <h5 class="truncate">TMP 6</h5>
+                    </div>
+
+                </div>
+
+            </div>
+            <!--end card-->
+
+
+
+        </div>
+        <!--close row-->
+
+
+
+
+    </div>
+    <!--close section-->
+
+</div>
+<!--Close Steps Menu Group 1-->
+
+
+
+
+
+
+
+
+
+<script>
+    //Need to put the Swiper into the dynamicaly generated content!
+    //initialize swiper SPA control for this content
+    var swiper = new Swiper('.swiper-container', {
+        // If we need pagination
+        pagination: '.swiper-pagination',
+        paginationClickable: true,
+        spaceBetween: 0,
+        autoHeight: true,
+
+
+        onInit: function(swiper) {
+
+
+
+            thisScreen = swiper.activeIndex;
+
+            //Set main navigation history
+            mainMenuScreen = swiper.activeIndex;
+
+
+
+
+        },
+
+
+
+
+        // Add one more handler for this event
+        onSlideChangeEnd: function(swiper) {
+
+            //Set main navigation history
+            mainMenuScreen = swiper.activeIndex;
+
+
+        },
+
+        paginationBulletRender: function(swiper, index, className) {
+            return '<span class="' + className + '"></span>';
+        }
+
+    });

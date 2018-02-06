@@ -1,0 +1,117 @@
+/* Custom Stylesheet */
+
+ /*FONTS*/
+
+
+ @font-face {
+     font-family: 'Material Icons';
+     font-style: normal;
+     font-weight: 400;
+     src: url(../iconfont/MaterialIcons-Regular.eot);
+     /* For IE6-8 */
+     src: local('Material Icons'), local('MaterialIcons-Regular'), url(../iconfont/MaterialIcons-Regular.woff2) format('woff2'), url(../iconfont/MaterialIcons-Regular.woff) format('woff'), url(../iconfont/MaterialIcons-Regular.ttf) format('truetype');
+ }
+
+
+ @font-face {
+     font-family: 'Montserrat-Bold';
+     font-style: normal;
+     font-weight: 400;
+     src: url(../fonts/Montserrat-Bold.ttf);
+     /* For IE6-8 */
+     src: local('Montserrat-Bold'), local('Montserrat-Bold'), url(../fonts/Montserrat-Bold.ttf) format('ttf');
+ }
+
+ @font-face {
+     font-family: 'Montserrat';
+     font-style: normal;
+     font-weight: 400;
+     src: url(../fonts/Montserrat-Regular.ttf);
+     /* For IE6-8 */
+
+     src: local('Montserrat-Regular'), local('Montserrat-Regular'), url(../fonts/Montserrat-Regular.ttf) format('ttf');
+ }
+
+ html {
+     font-family: Montserrat, sans-serif;
+     background-color: #343434;
+ }
+
+ /*As we are hijacking the # and not using href, turn links back to hand globally*/
+ a {
+     cursor: pointer;
+     color: #1976D2 !important;
+     font-weight: bold;
+ }
+
+ /*fix blue border issue*/
+ input {
+  outline:none;
+ }
+
+
+ .progress {
+     position: relative;
+     height: 4px;
+     display: block;
+     width: 100%;
+     background-color: #acece6;
+     border-radius: 2px;
+     margin: .5rem 0 1rem 0;
+     overflow: hidden;
+     margin-top:130px;
+ }
+
+
+
+
+
+ .card .card-content {
+    padding: 0px;
+    border-radius: 0 0 2px 2px;
+    background-color:#ff5252 ;
+}
+
+
+ .card-reveal .material-icons {
+position: relative;
+color: #46959c;
+
+
+ }
+
+.card-reveal i.right {
+    float: right;
+    margin-right: -15px;
+    margin-top: -15px;
+
+    z-index: 998;
+    font-size: 22px;
+
+}
+
+.card-reveal p{
+height: 100%;
+overflow-y: hidden;
+
+}
+
+.swiper-container {
+    width: 100%;
+    padding-top:180px;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    left: 0;
+    right: 0;
+    background-color: #fafafa;
+    padding: 0;
+    max-height: 70%;
+    width: 30%;
+    margin: auto;
+    overflow-y: auto;
+    border-radius: 2px;
+    will-change: top, opacity;
+}
